@@ -1,6 +1,42 @@
-<h1>hey</h1>
-<ul>
-  <% @cocktails.each do |cocktail| %>
-  <li><%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+<html>
+  <head>
+    </head>
+    <body>
+<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+  <%= link_to "#", class: "navbar-brand" do %>
+    <%= image_tag "https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/logo.png" %>
   <% end %>
-</ul>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li>
+        <%= link_to "Add a cocktail", new_cocktail_path, class: "btn btn-primary btn-lg" %>
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+
+  <div class="container mt-5">
+    <div class="row">
+      <% @cocktails.each do |cocktail| %>
+      <div class="col-6">
+        <div class="card bg-dark text-white">
+          <img src="https://picsum.photos/200/300/?blur" class="card-img" alt="...">
+          <div class="card-img-overlay">
+            <h5 class="card-title"><%= link_to cocktail.name, cocktail_path(cocktail) %></h5>
+          </div>
+        </div>
+      </div>
+       <% end %>
+    </div>
+  </div>
+
+  </div>
+</body>
