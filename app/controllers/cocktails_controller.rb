@@ -12,7 +12,6 @@ class CocktailsController < ApplicationController
     @cocktail = Cocktail.new
   end
 
-
   def create
     @cocktail = Cocktail.new(cocktail_params)
     if @cocktail.save
